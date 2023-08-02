@@ -1,0 +1,51 @@
+Options:
+1. Get weather
+2. Get Wind Speed
+3. Get Pressure
+0. Exit
+Enter your choice (0/1/2/3): 1
+Enter the city name: London
+
+Weather in London:
+Description: Clouds
+Temperature: 22.33°C
+
+Options:
+1. Get weather
+2. Get Wind Speed
+3. Get Pressure
+0. Exit
+Enter your choice (0/1/2/3): 2
+Enter the city name: London
+
+Wind Speed in London: 3.1 m/s
+
+Options:
+1. Get weather
+2. Get Wind Speed
+3. Get Pressure
+0. Exit
+Enter your choice (0/1/2/3): 3
+Enter the city name: London
+
+Pressure in London: 1014 hPa
+
+Options:
+1. Get weather
+2. Get Wind Speed
+3. Get Pressure
+0. Exit
+Enter your choice (0/1/2/3): 1
+Enter the city name: New York
+
+Weather in New York:
+Description: Clear sky
+Temperature: 27.89°C
+
+Options:
+1. Get weather
+2. Get Wind Speed
+3. Get Pressure
+0. Exit
+Enter your choice (0/1/2/3): 0
+Exiting the program.

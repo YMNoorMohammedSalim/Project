@@ -1,0 +1,54 @@
+import requests
+
+API_KEY = '98525836aa827ff0631f7ec246a0f417'
+BASE_URL = 'https://api.openweathermap.org/data/2.5/weather?q={}&appid={}'
+
+def get_weather(city_name):
+    url = BASE_URL.format(city_name, API_KEY)
+    response = requests.get(url)
+    data = response.json()
+
+    if response.status_code == 200:
+        return data
+    else:
+        print(f"Error: Could not fetch weather data for {city_name}.")
+        return None
+
+def main():
+    while True:
+        print("\nOptions:")
+        print("1. Get weather")
+        print("2. Get Wind Speed")
+        print("3. Get Pressure")
+        print("0. Exit")
+        choice = input("Enter your choice (0/1/2/3): ")
+
+        if choice == '0':
+            print("Exiting the program.")
+            break
+        elif choice == '1':
+            city_name = input("Enter the city name: ")
+            data = get_weather(city_name)
+            if data:
+                weather_description = data['weather'][0]['description'].capitalize()
+                temperature = data['main']['temp']
+                print(f"\nWeather in {city_name}:")
+                print(f"Description: {weather_description}")
+                print(f"Temperature: {temperature}°C")
+        elif choice == '2':
+            city_name = input("Enter the city name: ")
+            data = get_weather(city_name)
+            if data:
+                wind_speed = data['wind']['speed']
+                print(f"Wind Speed in {city_name}: {wind_speed} m/s")
+        elif choice == '3':
+            city_name = input("Enter the city name: ")
+            data = get_weather(city_name)
+            if data:
+                pressure = data['main']['pressure']
+                print(f"Pressure in {city_name}: {pressure} hPa")
+        else:
+            print("Invalid choice. Please enter a valid option (0/1/2/3).")
+
+if __name__ == "__main__":
+    main()
